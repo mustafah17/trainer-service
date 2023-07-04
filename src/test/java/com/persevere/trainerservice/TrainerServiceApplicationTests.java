@@ -1,4 +1,4 @@
-package com.persevere.trainerservice.trainerservice;
+package com.persevere.trainerservice;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
