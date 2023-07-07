@@ -10,6 +10,16 @@ public class Trainer {
     private String username;
     private String password;
 
+    public Trainer(Long id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+
+    public Trainer() {
+
+    }
+
     public Long getId() {
         return id;
     }

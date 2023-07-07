@@ -11,6 +11,15 @@ public class Customer {
     private String username;
     private String password;
 
+    public Customer(Long id, String username, String password) {
+        this.id = id;
+        this.username = username;
+        this.password = password;
+    }
+
+    public Customer() {
+
+    }
 
     public void setId(Long id) {
         this.id = id;
@@ -18,5 +27,14 @@ public class Customer {
 
     public Long getId() {
         return id;
+    }
+
+    @Override
+    public String toString() {
+        return "Customer{" +
+                "id=" + id +
+                ", username='" + username + '\'' +
+                ", password='" + password + '\'' +
+                '}';
     }
 }
