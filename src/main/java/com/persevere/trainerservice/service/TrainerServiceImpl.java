@@ -11,9 +11,8 @@ import java.util.List;
 @Service
 public class TrainerServiceImpl implements TrainerService {
 
-    private TrainerRepository trainerRepository;
+    private final TrainerRepository trainerRepository;
 
-    @Autowired
     public TrainerServiceImpl(TrainerRepository trainerRepository) {this.trainerRepository = trainerRepository;}
 
     public List<Trainer> findAll() {

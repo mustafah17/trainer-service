@@ -12,9 +12,8 @@ import java.util.List;
 @RequestMapping("/v1/trainer")
 public class TrainerController {
 
-    private TrainerService trainerService;
+    private final TrainerService trainerService;
 
-    @Autowired
     public TrainerController(TrainerService trainerService) {
         this.trainerService = trainerService;
     }
@@ -24,8 +23,7 @@ public class TrainerController {
         return trainerService.findAll();
     }
 
-    @GetMapping
-    @RequestMapping("{id}")
+    @GetMapping("{id}")
     public Trainer get(Long id) {
         return trainerService.getTrainer(id);
     }
@@ -35,14 +33,12 @@ public class TrainerController {
         return trainerService.create(trainer);
     }
 
-    @PutMapping
-    @RequestMapping("{id}")
+    @PutMapping("{id}")
     public Trainer update(@PathVariable Long id, @RequestBody Trainer trainer) {
         return trainerService.update(id, trainer);
     }
 
-    @DeleteMapping
-    @RequestMapping("{id}")
+    @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
         trainerService.delete(id);
     }

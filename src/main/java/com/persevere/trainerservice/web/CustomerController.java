@@ -12,9 +12,8 @@ import java.util.List;
 @RequestMapping("/v1/customer")
 public class CustomerController {
 
-    private CustomerService customerService;
+    private final CustomerService customerService;
 
-    @Autowired
     public CustomerController(CustomerService customerService) {
         this.customerService = customerService;
     }
@@ -24,8 +23,7 @@ public class CustomerController {
         return customerService.findAll();
     }
 
-    @GetMapping
-    @RequestMapping("{id}")
+    @GetMapping("{id}")
     public Customer get(@PathVariable Long id) {
         return customerService.getCustomer(id);
     }
@@ -35,14 +33,12 @@ public class CustomerController {
         return customerService.create(customer);
     }
 
-    @PutMapping
-    @RequestMapping("{id}")
+    @PutMapping("{id}")
     public Customer update(@PathVariable Long id, @RequestBody Customer customer) {
         return customerService.update(id, customer);
     }
 
-    @DeleteMapping
-    @RequestMapping("{id}")
+    @DeleteMapping("{id}")
     public void delete(@PathVariable Long id) {
         customerService.delete(id);
     }
